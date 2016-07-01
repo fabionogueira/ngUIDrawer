@@ -1,26 +1,27 @@
 /**
- * fx-ui-drawer.js
+ * ngUIDrawer.js
  * inspiração: http://www.material-ui.com/#/components/drawer
- * @dependencies angular, angular.fx
+ * @directive ui-drawer
+ * @dependencies angular, ngAnimate, ngUI
  * 
  */
 
 (function(){
     
-    var UI_DRAWER_HIDE_CLASS = 'fx-drawer-hide',
-        UI_DRAWER_SHOW_CLASS = 'fx-drawer-show';
+    var UI_DRAWER_HIDE_CLASS = 'ui-drawer-hide',
+        UI_DRAWER_SHOW_CLASS = 'ui-drawer-show';
     
-    angular.module('fx')
-    .directive('fxDrawer', ['$animate', '$timeout', function($animate, $timeout) {
+    angular.module('ngUI')
+    .directive('uiDrawer', ['$animate', '$timeout', '$ngUI', function($animate, $timeout, $ngUI) {
         return {
-            restrict: 'E',
+            restrict: 'EA',
             transclude: true,
             template: '<div ng-transclude></div>',
             link: function ($scope, $element, attr) {
                 var methods, e = $element.children()[0];
                 
                 //transporta qualquer classe definida na raiz para o element interno ng-transclude
-                e.className = "fx-drawer-content " + ($element.attr('class')||'');
+                e.className = "ui-drawer-content " + ($element.attr('class')||'');
                 $element.removeAttr('class');
                 
                 $element.on('mousedown', onMouseDown);
@@ -87,7 +88,7 @@
                     }
                 };
                 
-                angular.fx.component($scope, methods, $element, 'fxDrawer');
+                $ngUI.register($scope, methods, $element, attr.uiDrawer);
                 
                 function apply(fn){
                     $timeout(function(){
@@ -96,7 +97,7 @@
                 }
                 function onMouseDown(event){
                     var v = $element.attr('docked') || "";
-                    if (v.exist('auto') && !angular.fx.dom.closet(event.target, UI_DRAWER_HIDE_CLASS)){
+                    if (v.exist('auto') && !$ngUI.DOM.closet(event.target, UI_DRAWER_HIDE_CLASS)){
                         methods.hide();
                     }
                 }
