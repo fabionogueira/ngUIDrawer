@@ -36,7 +36,7 @@
 .ng-ui-drawer{
     opacity: 1;
     display: block;
-    transition: opacity 400ms;
+    transition: opacity 200ms;
 }
 .ng-ui-drawer-hide{
     opacity:0;
@@ -44,7 +44,7 @@
 
 /* animação do drawer */
 .ng-ui-drawer-content{
-    transition:transform 400ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transition:transform 300ms;
     transform:translate3d(0, 0, 0);
 }
 .ng-ui-drawer-hide .ng-ui-drawer-content{
