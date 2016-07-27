@@ -1,0 +1,11 @@
+
+button{display:block;margin-bottom:10px;}
+.mytype{background:#673AB7;color:#fff;font-size:24px;}
+[ft-order="1"]{margin-top:40px}
+[ft-order="2"]{margin-top:80px}
+[ft-order="3"]{margin-top:120px}
+[ft-order="4"]{margin-top:160px}
+
+section{font-family:monospace;background:#eaeaea;padding:10px;margin:10px;border-radius:4px;}
+section td{padding:4px}
+

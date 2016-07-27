@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="App">
+    <head>
+        <title>ngUIDrawer Demo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="index.css" rel="stylesheet" type="text/css"/>
+        <link href="../ngUIDrawer.css" rel="stylesheet" type="text/css"/>
+        
+        <script src="angularjs-1.5.3.js" type="text/javascript"></script>
+        <script src="angular-animate-1.5.3.js" type="text/javascript"></script>
+        <script src="ngUI.js" type="text/javascript"></script>
+        <script src="../ngUIDrawer.js" type="text/javascript"></script>
+        
+        <script src="index.js" type="text/javascript"></script>
+    </head>
+    <body ng-controller="AppCtrl">
+        
+        <h1>UIDrawer Demo</h1>
+        <button ng-click="show(1)">show left</button>
+        <button ng-click="show(2)">show right</button>
+        
+        <div ng-ui-drawer="drawer1" docked="auto"></div>
+        <div ng-ui-drawer="drawer2" docked="auto" right state="close"></div>
+    </body>
+</html>
