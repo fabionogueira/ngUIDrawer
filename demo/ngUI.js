@@ -1,6 +1,6 @@
 /**
  * ngUI.js
- * @version 1.0.6
+ * @version 1.0.7
  * @author Fábio Nogueira <fabio.bacabal@gmail.com>
  * @dependencies ngAnimate
  * @description text
@@ -250,7 +250,7 @@
                 off1 = off2 = null;
                 
                 if (onComponentsComplete){
-                    onComponentsComplete(); onComponentsComplete = null;
+                    onComponentsComplete(components[$scope.$id]); onComponentsComplete = null;
                 }
             }
         });
@@ -258,7 +258,7 @@
         $scope.$evalAsync(function() {
             setTimeout(function(){
                 if (onComponentsComplete && pendings<1){
-                    onComponentsComplete(); onComponentsComplete = null;
+                    onComponentsComplete(components[$scope.$id]); onComponentsComplete = null;
                 }                
             },40);
         });
