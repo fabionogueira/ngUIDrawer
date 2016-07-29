@@ -10,6 +10,7 @@
         
         <script src="angularjs-1.5.3.js" type="text/javascript"></script>
         <script src="angular-animate-1.5.3.js" type="text/javascript"></script>
+        <script src="hammer.js" type="text/javascript"></script>
         <script src="ngUI.js" type="text/javascript"></script>
         <script src="../ngUIDrawer.js" type="text/javascript"></script>
         
@@ -21,7 +22,12 @@
         <button ng-click="show(1)">show left</button>
         <button ng-click="show(2)">show right</button>
         
-        <div ng-ui-drawer="drawer1" docked="auto"></div>
-        <div ng-ui-drawer="drawer2" docked="auto" right state="close"></div>
+        <div ng-ui-drawer="drawer1" docked="auto" style="background:#0f1329">
+            <button ng-click="close(1)">close left</button>
+        </div>
+        
+        <div ng-ui-drawer="drawer2" right state="close" style="background:#4CAF50">
+            <button ng-click="close(2)">close right</button>
+        </div>
     </body>
 </html>

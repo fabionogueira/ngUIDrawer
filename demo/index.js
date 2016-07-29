@@ -11,5 +11,7 @@ angular
         $scope.show = function(v){
             v===1 ? drawer1.show() : drawer2.show();
         };
-
+        $scope.close = function(v){
+            v===1 ? drawer1.hide() : drawer2.hide();
+        };
     }]);
